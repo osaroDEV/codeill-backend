@@ -22,7 +22,7 @@ app.use('/', infoRouter)
 // connect to database
 mongoose.connect(process.env.MONGO_URI).then(() => {
   // listen to port
-  app.listen(process.env.PORT, () => {
-    console.log(`connected to database & listening to PORT ${process.env.PORT}`);
+  app.listen(process.env.URL, () => {
+    console.log(`connected to database & listening to PORT`);
   });
 });
