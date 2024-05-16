@@ -1,11 +1,16 @@
 // import dotenv
 require('dotenv').config();
 
+const cors = require('cors');
+
 // import express
 const express = require('express');
 
 // create app from express
 const app = express();
+
+// apply CORS middleware to all routes
+app.use(cors());
 
 // access req.body
 app.use(express.json());
