@@ -18,14 +18,24 @@ app.use(express.json());
 // import mongoose
 const mongoose = require('mongoose');
 
-// import router
+// import info router
 const infoRouter = require('./routes/infoRoutes');
 
-// access routes
+
+// import course router
+const courseRouter = require('./routes/courseRoutes');
+
+// access info routes
 app.use('/', infoRouter)
 
+// access course routes
+app.use('/courses', courseRouter)
+
 // connect to database
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
   // listen to port
   app.listen(process.env.PORT, () => {
     console.log(`connected to database & listening to PORT ${process.env.PORT}`);
