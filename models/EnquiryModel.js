@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 // create model from class
-const workoutModel = new Schema({
+const enquiryModel = new Schema({
     fullName: {
         type: String,
         required: true,
@@ -25,4 +25,4 @@ const workoutModel = new Schema({
     },
 }, {timestamps: true})
 
-module.exports = mongoose.model('Workout', workoutModel)
+module.exports = mongoose.model('Enquiry', enquiryModel)

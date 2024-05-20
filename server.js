@@ -18,15 +18,15 @@ app.use(express.json());
 // import mongoose
 const mongoose = require('mongoose');
 
-// import info router
-const infoRouter = require('./routes/infoRoutes');
+// import enquiry router
+const enquiryRouter = require('./routes/enquiryRoutes');
 
 
 // import course router
 const courseRouter = require('./routes/courseRoutes');
 
 // access info routes
-app.use('/', infoRouter)
+app.use('/enquiries', enquiryRouter)
 
 // access course routes
 app.use('/courses', courseRouter)

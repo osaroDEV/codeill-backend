@@ -1,5 +1,6 @@
 const express = require('express');
-const Course = require('../models/CourseModel'); // Assuming your model is in a separate file
+const Course = require('../models/CourseModel');
+const { getAllCourses, postCourse } = require('../controllers/courseController');
 
 const router = express.Router();
 
@@ -16,10 +17,9 @@ router.get('/search', async (req, res) => {
   }
 });
 
-router.post('/courses', async (req, res) => {
-    const { title, description, category, instructor } = req.body;
-  
-    const course = await Course.create({ title, description, category, instructor });
-    res.status(200).json(course);
-  });
+router.get('/', getAllCourses);
+
+router.post('/', postCourse);
+
+
 module.exports = router;
