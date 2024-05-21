@@ -26,10 +26,10 @@ const enquiryRouter = require('./routes/enquiryRoutes');
 const courseRouter = require('./routes/courseRoutes');
 
 // access info routes
-app.use('/enquiries', enquiryRouter)
+app.use('/enquiries/', enquiryRouter)
 
 // access course routes
-app.use('/courses', courseRouter)
+app.use('/courses/', courseRouter)
 
 // connect to database
 mongoose.connect(process.env.MONGO_URI, {
